@@ -1,0 +1,11 @@
+version : '2.2'
+services:
+  jenkins:
+        container_name : jenkins
+        image: registry.cn-hangzhou.aliyuncs.com/yangyuanpeng/jenkins:2.190.2-tomcat8-sshd
+        restart: always
+        volumes:
+           - /jenkins/data:/data
+        ports :
+                - 8888:8080
+                - "3333:22"     #ssh端口
